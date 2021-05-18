@@ -56,6 +56,12 @@
 		DB33EAEF26539EFD000CC1EF /* Sha-InstagramApp */ = {
 			isa = PBXGroup;
 			children = (
+				DB33EB0F2653A044000CC1EF /* Utils */,
+				DB33EB0E2653A042000CC1EF /* APIs */,
+				DB33EB0D2653A03F000CC1EF /* Models */,
+				DB33EB0C2653A03B000CC1EF /* View Models */,
+				DB33EB0B2653A039000CC1EF /* Controllers */,
+				DB33EB042653A012000CC1EF /* Views */,
 				DB33EAF026539EFD000CC1EF /* AppDelegate.swift */,
 				DB33EAF226539EFD000CC1EF /* SceneDelegate.swift */,
 				DB33EAF426539EFD000CC1EF /* ViewController.swift */,
@@ -65,6 +71,48 @@
 				DB33EAFE26539EFE000CC1EF /* Info.plist */,
 			);
 			path = "Sha-InstagramApp";
+			sourceTree = "<group>";
+		};
+		DB33EB042653A012000CC1EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DB33EB0B2653A039000CC1EF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DB33EB0C2653A03B000CC1EF /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		DB33EB0D2653A03F000CC1EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DB33EB0E2653A042000CC1EF /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		DB33EB0F2653A044000CC1EF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
