@@ -16,23 +16,43 @@ class MainTabController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabControllers()
+        
     }
     
     // MARK: - Helpers
     
     func configureTabControllers() {
         
-        let feedVC = FeedViewController()
-        let searchVC = SearchViewController()
-        let imageSelectorVC = ImageSelectorViewController()
-        let notificationVc = NotificationViewController()
-        let profileVc = ProfileViewController()
+        let feedNavController = templateNavigationController(unSelectedImage: UIImage(named: "home_unselected"), selectedImage: UIImage(named:"home_selected"), viewController: FeedViewController())
+        
+        let searchNavController = templateNavigationController(unSelectedImage: UIImage(named: "search_unselected"), selectedImage: UIImage(named: "search_selected"), viewController: SearchViewController())
+        
+        
+        let imageSelectorNavController = templateNavigationController(unSelectedImage:  UIImage(named: "plus_unselected"), selectedImage: UIImage(named: "plus_unselected"), viewController: ImageSelectorViewController())
+        
+        let notificationNavController = templateNavigationController(unSelectedImage:  UIImage(named: "like_unselected"), selectedImage: UIImage(named: "like_selected"), viewController: NotificationViewController())
+        
+        let profileNavController = templateNavigationController(unSelectedImage:  UIImage(named: "profile_unselected"), selectedImage: UIImage(named: "profile_selected"), viewController: ProfileViewController())
         
         // array of view controller is displayed by the TabBar interface.
         // FeedVc is the first Array of VC so it's Home VC for TabBar
-        viewControllers = [feedVC,searchVC,imageSelectorVC,notificationVc,profileVc]
+        viewControllers = [feedNavController,
+                           searchNavController,
+                           imageSelectorNavController,
+                           notificationNavController,
+                           profileNavController]
         
+        tabBar.tintColor = .black // set tab bar color
     }
-
+    
+    
+    func templateNavigationController(unSelectedImage:UIImage?, selectedImage:UIImage?, viewController:UIViewController) -> UINavigationController {
+        
+        let navController = UINavigationController(rootViewController: viewController)
+        navController.tabBarItem.image = unSelectedImage // image for before select the tab
+        navController.tabBarItem.selectedImage = selectedImage // image for after selected tab
+        navController.navigationBar.tintColor =  .blue // Set Naviagation Color
+        return navController
+    }
     
 }
