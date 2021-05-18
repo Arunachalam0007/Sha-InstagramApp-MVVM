@@ -23,7 +23,14 @@ class MainTabController: UITabBarController {
     
     func configureTabControllers() {
         
-        let feedNavController = templateNavigationController(unSelectedImage: UIImage(named: "home_unselected"), selectedImage: UIImage(named:"home_selected"), viewController: FeedViewController())
+        // create collViewFlowlayout for initialise FeedCollectionVC
+        let collViewFlowLayout = UICollectionViewFlowLayout()
+        
+        let feedCollViewController = FeedCollectionViewController(collectionViewLayout: collViewFlowLayout)
+        
+        // create Nav collectiors for Bar Items
+        
+        let feedNavController = templateNavigationController(unSelectedImage: UIImage(named: "home_unselected"), selectedImage: UIImage(named:"home_selected"), viewController: feedCollViewController )
         
         let searchNavController = templateNavigationController(unSelectedImage: UIImage(named: "search_unselected"), selectedImage: UIImage(named: "search_selected"), viewController: SearchViewController())
         
