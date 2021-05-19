@@ -19,13 +19,13 @@ class CustomTextField: UITextField {
         setHeight(50)
         keyboardAppearance = .dark // set keyboard color
         
-//        let spaceLeftSide = UIView()
-//        spaceLeftSide.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        spaceLeftSide.widthAnchor.constraint(equalToConstant: 12).isActive = true
-//        
-//        // here leftView is The overlay view that displays on the left
-//        leftView = spaceLeftSide
-//        leftViewMode = .always //left overlay view appears in the text fiel
+        let spaceLeftSide = UIView()
+        spaceLeftSide.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        spaceLeftSide.widthAnchor.constraint(equalToConstant: 12).isActive = true
+        
+        // here leftView is The overlay view that displays on the left
+        leftView = spaceLeftSide
+        leftViewMode = .always //left overlay view appears in the text fiel
     }
     
     required init?(coder: NSCoder) {
