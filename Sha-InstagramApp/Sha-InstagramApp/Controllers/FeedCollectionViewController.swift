@@ -18,7 +18,7 @@ class FeedCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Register Collection Cell
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(FeedCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
     // MARK: - Helpers
@@ -41,8 +41,7 @@ extension FeedCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FeedCollectionViewCell
         return cell
     }
     
@@ -56,8 +55,9 @@ extension FeedCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = view.frame.width
-        let cellHight = 200.0
+        let cellHight = cellWidth + 8 + 40 + 8 + 50 + 60 + 20
         
-        return CGSize(width: cellWidth, height: CGFloat(cellHight))
+        
+        return CGSize(width: cellWidth, height: cellHight)
     }
 }
