@@ -21,6 +21,8 @@
 		DB33EB1D2653BD58000CC1EF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33EB1C2653BD58000CC1EF /* ProfileViewController.swift */; };
 		DB33EB242653FA83000CC1EF /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33EB232653FA83000CC1EF /* FeedCollectionViewCell.swift */; };
 		DB33EB26265401F4000CC1EF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33EB25265401F4000CC1EF /* Extensions.swift */; };
+		DB926630265532B100E794EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92662F265532B100E794EE /* LoginViewController.swift */; };
+		DB9266322655331C00E794EE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9266312655331C00E794EE /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		DB33EB1C2653BD58000CC1EF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DB33EB232653FA83000CC1EF /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		DB33EB25265401F4000CC1EF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DB92662F265532B100E794EE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DB9266312655331C00E794EE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		DB33EB0B2653A039000CC1EF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DB92662E265531F400E794EE /* Authentication */,
 				DB33EB122653A17C000CC1EF /* MainTabController.swift */,
 				DB33EB142653BCFD000CC1EF /* FeedCollectionViewController.swift */,
 				DB33EB162653BD0E000CC1EF /* SearchViewController.swift */,
@@ -145,6 +150,15 @@
 				DB33EB232653FA83000CC1EF /* FeedCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DB92662E265531F400E794EE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				DB92662F265532B100E794EE /* LoginViewController.swift */,
+				DB9266312655331C00E794EE /* RegistrationViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,9 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB926630265532B100E794EE /* LoginViewController.swift in Sources */,
 				DB33EB172653BD0E000CC1EF /* SearchViewController.swift in Sources */,
 				DB33EAF526539EFD000CC1EF /* ViewController.swift in Sources */,
 				DB33EB242653FA83000CC1EF /* FeedCollectionViewCell.swift in Sources */,
+				DB9266322655331C00E794EE /* RegistrationViewController.swift in Sources */,
 				DB33EB1B2653BD48000CC1EF /* NotificationViewController.swift in Sources */,
 				DB33EAF126539EFD000CC1EF /* AppDelegate.swift in Sources */,
 				DB33EB152653BCFD000CC1EF /* FeedCollectionViewController.swift in Sources */,

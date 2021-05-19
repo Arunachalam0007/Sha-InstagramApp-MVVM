@@ -21,7 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scean = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: scean)
-        window?.rootViewController = MainTabController() // set TabController to MainTabController
+      //  window?.rootViewController = MainTabController() // set TabController to MainTabController
+        window?.rootViewController = UINavigationController(rootViewController: LoginViewController()) 
         
     }
 
