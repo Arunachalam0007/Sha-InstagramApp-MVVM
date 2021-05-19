@@ -47,6 +47,18 @@ extension UIButton {
         
         setAttributedTitle(attributedTitle, for: .normal)
     }
+    
+    func setCustomAtrributedTitle(firstPart: String, seccondPart: String){
+        let attri: [NSAttributedString.Key : Any] = [.foregroundColor : UIColor(white: 1, alpha: 0.7) , .font: UIFont.systemFont(ofSize: 16)]
+        let boldAttri: [NSAttributedString.Key: Any] = [ .foregroundColor: UIColor(white: 1, alpha: 0.7) , .font: UIFont.boldSystemFont(ofSize: 16) ]
+        
+        //NSMutableAttributedString is used to append another NSAttributedString
+        let btnTitle = NSMutableAttributedString (string: firstPart, attributes: attri)
+        btnTitle.append(NSAttributedString(string: seccondPart, attributes: boldAttri))
+        
+        // set NsMutableAttributesString to AtrributedTitle
+        setAttributedTitle(btnTitle, for: .normal)
+    }
 }
 
 extension UIView {

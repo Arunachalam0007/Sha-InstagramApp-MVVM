@@ -23,6 +23,7 @@
 		DB33EB26265401F4000CC1EF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33EB25265401F4000CC1EF /* Extensions.swift */; };
 		DB926630265532B100E794EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92662F265532B100E794EE /* LoginViewController.swift */; };
 		DB9266322655331C00E794EE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9266312655331C00E794EE /* RegistrationViewController.swift */; };
+		DB926634265562F700E794EE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926633265562F700E794EE /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DB33EB25265401F4000CC1EF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DB92662F265532B100E794EE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DB9266312655331C00E794EE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		DB926633265562F700E794EE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		DB33EB042653A012000CC1EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB926633265562F700E794EE /* CustomTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB926634265562F700E794EE /* CustomTextField.swift in Sources */,
 				DB926630265532B100E794EE /* LoginViewController.swift in Sources */,
 				DB33EB172653BD0E000CC1EF /* SearchViewController.swift in Sources */,
 				DB33EAF526539EFD000CC1EF /* ViewController.swift in Sources */,

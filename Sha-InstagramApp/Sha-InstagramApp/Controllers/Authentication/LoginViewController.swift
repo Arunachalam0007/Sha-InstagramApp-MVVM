@@ -20,24 +20,14 @@ class LoginViewController: UIViewController {
     }()
     
     var emailTextField: UITextField = {
-        var emailTextF = UITextField()
-        emailTextF.textColor = .white
-        emailTextF.backgroundColor = UIColor(white: 1, alpha: 0.1)
-        emailTextF.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.6)])
-        emailTextF.setHeight(50)
+        var emailTextF = CustomTextField(placeHolderName: "Email")
         emailTextF.keyboardType = .emailAddress // set Keyboard keys
-        emailTextF.keyboardAppearance = .dark // set keyboard color
         return emailTextF
     }()
     
     var passwordTextField: UITextField = {
-        var passwordTextF = UITextField()
-        passwordTextF.textColor = .white
-        passwordTextF.backgroundColor = UIColor(white: 1, alpha: 0.1)
-        passwordTextF.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.6)])
-        passwordTextF.setHeight(50)
+        var passwordTextF = CustomTextField(placeHolderName: "Password")
         passwordTextF.isSecureTextEntry = true // password Hide
-        passwordTextF.keyboardAppearance = .dark // set keyboard color
         return passwordTextF
     }()
     
@@ -53,29 +43,15 @@ class LoginViewController: UIViewController {
     
     var dontHaveAccountBtn: UIButton = {
         var dontHaveAccBtn = UIButton(type: .system)
-        
-        var attri: [NSAttributedString.Key : Any] = [.foregroundColor : UIColor(white: 1, alpha: 0.87) , .font: UIFont.systemFont(ofSize: 16)]
-        var boldAttri: [NSAttributedString.Key: Any] = [ .foregroundColor: UIColor(white: 1, alpha: 0.87) , .font: UIFont.boldSystemFont(ofSize: 16) ]
-        
-        var btnTitle = NSMutableAttributedString (string: "Dont' have an account?  ", attributes: attri)
-        btnTitle.append(NSAttributedString(string: "Sign Up", attributes: boldAttri))
-        
-        dontHaveAccBtn.setAttributedTitle(btnTitle, for: .normal)
+        dontHaveAccBtn.setCustomAtrributedTitle(firstPart: "Dont' have an account?  ", seccondPart: "Sign Up")
         return dontHaveAccBtn
     }()
     
     var forgotPasswordBtn: UIButton = {
         var forgotPassBtn = UIButton(type: .system)
         
-        var attri: [NSAttributedString.Key : Any] = [.foregroundColor : UIColor(white: 1, alpha: 0.7) , .font: UIFont.systemFont(ofSize: 16)]
-        var boldAttri: [NSAttributedString.Key: Any] = [ .foregroundColor: UIColor(white: 1, alpha: 0.7) , .font: UIFont.boldSystemFont(ofSize: 16) ]
+        forgotPassBtn.setCustomAtrributedTitle(firstPart: "Forgot your password?  ", seccondPart: "Get help signing in")
         
-        //NSMutableAttributedString is used to append another NSAttributedString
-        var btnTitle = NSMutableAttributedString (string: "Forgot your password?  ", attributes: attri)
-        btnTitle.append(NSAttributedString(string: "Get help signing in", attributes: boldAttri))
-        
-        // set NsMutableAttributesString to AtrributedTitle
-        forgotPassBtn.setAttributedTitle(btnTitle, for: .normal)
         return forgotPassBtn
     }()
 
