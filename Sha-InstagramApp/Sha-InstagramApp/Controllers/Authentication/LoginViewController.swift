@@ -24,14 +24,12 @@ class LoginViewController: UIViewController {
     var emailTextField: UITextField = {
         var emailTextF = CustomTextField(placeHolderName: "Email")
         emailTextF.keyboardType = .emailAddress // set Keyboard keys
-        emailTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         return emailTextF
     }()
     
     var passwordTextField: UITextField = {
         var passwordTextF = CustomTextField(placeHolderName: "Password")
         passwordTextF.isSecureTextEntry = true // password Hide
-        passwordTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         return passwordTextF
     }()
     
@@ -67,6 +65,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         configurationUI()
         configurePropertyUI()
+        configureNotificationObservers()
     }
     
     // MARK: - Actions
@@ -77,8 +76,7 @@ class LoginViewController: UIViewController {
         } else if sender == passwordTextField {
             loginVM.password = sender.text
         }
-        loginBtn.isEnabled = loginVM.isValid
-        loginBtn.backgroundColor = loginVM.btnBackgroundColor
+        updateFormBtn()
     }
     
     @objc func handleShowSignUp() {
@@ -137,5 +135,19 @@ class LoginViewController: UIViewController {
         
         dontHaveAccountBtn.translatesAutoresizingMaskIntoConstraints = false
         
+    }
+    
+       func configureNotificationObservers() {
+        emailTextField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+    }
+}
+
+// MARK: - FormViewModel
+
+extension LoginViewController: FormViewModel {
+    func updateFormBtn() {
+        loginBtn.isEnabled = loginVM.btnIsValid
+        loginBtn.backgroundColor = loginVM.btnBackgroundColor
     }
 }
