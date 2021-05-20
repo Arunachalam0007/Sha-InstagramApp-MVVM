@@ -82,6 +82,16 @@ class RegistrationViewController: UIViewController {
         }
         updateFormBtn()
     }
+    
+    @objc func handleShowProfilePhoto(sender: UIButton) {
+       
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        // allow editing must True or else we can't select image
+        imagePickerController.allowsEditing = true
+        
+        present(imagePickerController, animated: true)
+    }
 
     // MARK: - Lifecycle
 
@@ -134,7 +144,8 @@ class RegistrationViewController: UIViewController {
         passwordTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         fullNameTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         userNameTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
-
+        
+        plusPhotoBtn.addTarget(self, action: #selector(handleShowProfilePhoto), for: .touchUpInside)
     }
 }
 
@@ -144,6 +155,29 @@ extension RegistrationViewController: FormViewModel {
     func updateFormBtn() {
         signUpBtn.isEnabled = registrationVM.btnIsValid
         signUpBtn.backgroundColor = registrationVM.btnBackgroundColor
+    }
+}
+
+// MARK: - ImagePickerControllerDelegate
+
+extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // didFinishPickingMediaWithInfo This Call after pick the image from phone
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let selectedImageFromPhone = info[.editedImage] as? UIImage else { return }
+        
+        // We must add .withRenderingMode(.alwaysOriginal) then only image will show into screen
+        plusPhotoBtn.setImage(selectedImageFromPhone.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        plusPhotoBtn.layer.cornerRadius = plusPhotoBtn.frame.width/2
+        plusPhotoBtn.layer.masksToBounds = true // Must add this line
+        plusPhotoBtn.layer.borderWidth = 2
+        plusPhotoBtn.layer.borderColor = UIColor.white.cgColor
+        
+        dismiss(animated: true) {
+            print("Dismissed from phone")
+        }
     }
 }
 
