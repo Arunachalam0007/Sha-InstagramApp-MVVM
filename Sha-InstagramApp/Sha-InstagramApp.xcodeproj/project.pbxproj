@@ -24,6 +24,7 @@
 		DB926630265532B100E794EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92662F265532B100E794EE /* LoginViewController.swift */; };
 		DB9266322655331C00E794EE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9266312655331C00E794EE /* RegistrationViewController.swift */; };
 		DB926634265562F700E794EE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926633265562F700E794EE /* CustomTextField.swift */; };
+		DB926636265628FB00E794EE /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926635265628FB00E794EE /* AuthenticationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		DB92662F265532B100E794EE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DB9266312655331C00E794EE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DB926633265562F700E794EE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		DB926635265628FB00E794EE /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		DB33EB0C2653A03B000CC1EF /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				DB926635265628FB00E794EE /* AuthenticationViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				DB33EAF526539EFD000CC1EF /* ViewController.swift in Sources */,
 				DB33EB242653FA83000CC1EF /* FeedCollectionViewCell.swift in Sources */,
 				DB9266322655331C00E794EE /* RegistrationViewController.swift in Sources */,
+				DB926636265628FB00E794EE /* AuthenticationViewModel.swift in Sources */,
 				DB33EB1B2653BD48000CC1EF /* NotificationViewController.swift in Sources */,
 				DB33EAF126539EFD000CC1EF /* AppDelegate.swift in Sources */,
 				DB33EB152653BCFD000CC1EF /* FeedCollectionViewController.swift in Sources */,
