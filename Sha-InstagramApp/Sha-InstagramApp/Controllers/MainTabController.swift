@@ -25,7 +25,7 @@ class MainTabController: UITabBarController {
         
         // create collViewFlowlayout for initialise FeedCollectionVC
         let collViewFlowLayout = UICollectionViewFlowLayout()
-        
+        collViewFlowLayout.minimumLineSpacing = 0
         let feedCollViewController = FeedCollectionViewController(collectionViewLayout: collViewFlowLayout)
         
         // create Nav collectiors for Bar Items
@@ -58,7 +58,8 @@ class MainTabController: UITabBarController {
         let navController = UINavigationController(rootViewController: viewController)
         navController.tabBarItem.image = unSelectedImage // image for before select the tab
         navController.tabBarItem.selectedImage = selectedImage // image for after selected tab
-        navController.navigationBar.tintColor =  .blue // Set Naviagation Color
+        navController.navigationBar.tintColor =  .red // Set Naviagation Color
+        navController.navigationBar.backgroundColor = .white
         return navController
     }
     

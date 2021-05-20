@@ -12,19 +12,60 @@ private let reuseIdentifier = "Cell"
 
 class FeedCollectionViewController: UICollectionViewController {
     
+    var feedAuthVM = FeedAuthenticationViewModel()
+    
     // MARK: - Lifecycle
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Register Collection Cell
-        collectionView.register(FeedCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        DispatchQueue.main.async {
+            self.isActiveUser()
+        }
+        setupUI()
     }
+   
+    // MARK: - Actions
+    
+    func isActiveUser() {
+        feedAuthVM.getCurrentUser { user in
+            guard let user = user else {
+                self.showLoginPage()
+                return
+            }
+            print("DEBUG: \(user)")
+        }
+    }
+
+    @objc func handleLogout(){
+        feedAuthVM.getUserLogout { userLogout in
+            guard let userLogout = userLogout else {
+                print("DEBUG: Sorry Error in Logout")
+                return
+            }
+            print("DEBUG: \(userLogout)")
+            self.showLoginPage()
+        }
+    }
+    
+    func showLoginPage(){
+        let loginVC = LoginViewController()
+        let navLoginVC = UINavigationController(rootViewController: loginVC)
+        navLoginVC.modalPresentationStyle = .fullScreen
+        self.present(navLoginVC, animated: true)
+    }
+    
     
     // MARK: - Helpers
 
     func setupUI() {
         collectionView.backgroundColor = .white
+        // Register Collection Cell
+        collectionView.register(FeedCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        let leftBarBtnItem = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(handleLogout))
+        self.navigationItem.leftBarButtonItem = leftBarBtnItem
+        self.navigationItem.title = "Feed"
+       
     }
     
     

@@ -81,7 +81,13 @@ class RegistrationViewController: UIViewController {
         registrationVM.username = userNameTextF.text
         registrationVM.profileImage = profileImage.image
         
-        registrationVM.registerUserDetails()
+        registrationVM.registerUserDetails { response in
+            guard let response = response else {return}
+            print("DEBUG: ",response)
+            self.dismiss(animated: true)
+        }
+        
+
     }
     
     @objc func textFieldDidChanged(sender: UITextField) {
@@ -189,9 +195,7 @@ extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigat
         plusPhotoBtn.layer.borderWidth = 2
         plusPhotoBtn.layer.borderColor = UIColor.white.cgColor
         
-        dismiss(animated: true) {
-            print("Dismissed from phone")
-        }
+        dismiss(animated: true)
     }
 }
 

@@ -17,6 +17,31 @@ struct AuthenticationCredentials{
 
 struct AuthService {
     
+    func userLogIn(email:String, password:String, completion: @escaping (AuthDataResult?)-> () ) {
+        Auth.auth().signIn(withEmail: email, password: password) { authDataResult, error in
+            if let error = error {
+                print("DEBUG: Unable To SignIn: \(error)")
+                completion(nil)
+            }
+            completion(authDataResult)
+        }
+    }
+    
+    func userLogOut(completion: @escaping (String?)->()) {
+        do {
+            try Auth.auth().signOut()
+            completion("SignOut SuccessFully")
+        } catch {
+            print("DEBUG: Unable to SignOut")
+            completion(nil)
+        }
+    }
+    
+    func getCurrentUser(completion: @escaping (String?)->() ) {
+        let currentUser = Auth.auth().currentUser?.email
+        completion(currentUser)
+    }
+    
     func registerUser(authCredentials: AuthenticationCredentials, completion: @escaping (String?)-> () ){
         
         ImageUploader().uploadProfileImageToFireStorage(data: authCredentials.imageData) { imageURL in

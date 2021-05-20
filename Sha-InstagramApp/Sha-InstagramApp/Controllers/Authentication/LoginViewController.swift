@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
         lgnBtn.backgroundColor = .systemPurple.withAlphaComponent(0.2)
         lgnBtn.setHeight(50)
         lgnBtn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        lgnBtn.addTarget(self, action: #selector(handleSignIn), for: .touchUpInside)
         return lgnBtn
     }()
     
@@ -82,6 +83,17 @@ class LoginViewController: UIViewController {
     @objc func handleShowSignUp() {
         let registrationVC = RegistrationViewController()
         navigationController?.pushViewController(registrationVC, animated: true)
+    }
+    
+    @objc func handleSignIn(){
+        loginVM.email = emailTextField.text
+        loginVM.password = passwordTextField.text
+        
+        loginVM.userLogin { loginEmailName in
+            guard let loginEmailName = loginEmailName else {return}
+            print("DEBUG: \(loginEmailName) Is Logged IN")
+            self.dismiss(animated: true)
+        }
     }
     
     // MARK: - Helpers

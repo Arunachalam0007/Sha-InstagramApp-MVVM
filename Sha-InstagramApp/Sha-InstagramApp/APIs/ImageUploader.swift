@@ -24,7 +24,7 @@ struct ImageUploader{
             // get the imageURL from image in the ref(Folder)
             ref.downloadURL { url, error in
                 guard let imageURL = url?.absoluteString else {
-                    print("DEBUG: Unable get Download Image URL: \(error?.localizedDescription)")
+                    print("DEBUG: Unable get Download Image URL: \(error?.localizedDescription ?? "")")
                     completion(nil)
                     return
                 }

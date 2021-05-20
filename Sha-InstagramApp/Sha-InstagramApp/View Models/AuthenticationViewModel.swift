@@ -11,12 +11,27 @@ protocol FormViewModel {
     func updateFormBtn()
 }
 
-protocol AutheticationViewModel {
+protocol FormAutheticationViewModel {
     var btnIsValid:Bool { get }
     var btnBackgroundColor:UIColor { get }
 }
 
-struct LoginViewModel: AutheticationViewModel {
+struct FeedAuthenticationViewModel {
+    
+    var authServie = AuthService()
+    func getUserLogout(completion: @escaping (String?)->()){
+        authServie.userLogOut { result in
+            completion(result)
+        }
+    }
+    func getCurrentUser(completion: @escaping (String?)->()) {
+        authServie.getCurrentUser { result in
+            completion(result)
+        }
+    }
+}
+
+struct LoginViewModel: FormAutheticationViewModel {
     var email:String?
     var password:String?
     var btnIsValid:Bool {
@@ -25,9 +40,23 @@ struct LoginViewModel: AutheticationViewModel {
     var btnBackgroundColor:UIColor {
         return btnIsValid ? .systemPurple.withAlphaComponent(1) : .systemPurple.withAlphaComponent(0.2)
     }
+    
+    func userLogin(completion: @escaping (String?)->()){
+        guard let email = email, let password = password else {
+            print("DEBUG: Email and Password Should Not Be Empty")
+            return
+        }
+        AuthService().userLogIn(email: email, password: password) { authDataResult in
+            guard let authDataResult = authDataResult else {
+                completion(nil)
+                return
+            }
+            completion(authDataResult.user.email)
+        }
+    }
 }
 
-struct RegistrationViewModel: AutheticationViewModel {
+struct RegistrationViewModel: FormAutheticationViewModel {
     var email: String?
     var password: String?
     var fullname: String?
@@ -42,7 +71,7 @@ struct RegistrationViewModel: AutheticationViewModel {
         return btnIsValid ? .systemPurple.withAlphaComponent(1) : .systemPurple.withAlphaComponent(0.2)
     }
     
-    func registerUserDetails() {
+    func registerUserDetails(completion:@escaping (String?)->()) {
         guard let email = email,let password = password,let fullname = fullname,let username = username,let profileImageData = profileImage?.jpegData(compressionQuality: 0.7) else {
             print("DEBUG: please fill all your information")
             return
@@ -50,7 +79,7 @@ struct RegistrationViewModel: AutheticationViewModel {
         
         let authCredentials = AuthenticationCredentials(email: email, password: password, username: username, fullname: fullname, imageData: profileImageData)
         AuthService().registerUser(authCredentials: authCredentials) { response in
-            print("DEBUG: \(response ?? "Unable to Register please Check all your information")")
+            completion(response)
         }
     }
 }
