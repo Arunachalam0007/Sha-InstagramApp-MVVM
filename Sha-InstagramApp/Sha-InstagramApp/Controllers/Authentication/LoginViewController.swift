@@ -44,6 +44,7 @@ class LoginViewController: UIViewController {
     var dontHaveAccountBtn: UIButton = {
         var dontHaveAccBtn = UIButton(type: .system)
         dontHaveAccBtn.setCustomAtrributedTitle(firstPart: "Dont' have an account?  ", seccondPart: "Sign Up")
+        dontHaveAccBtn.addTarget(self, action: #selector(handleShowSignUp) , for: .touchUpInside)
         return dontHaveAccBtn
     }()
     
@@ -63,21 +64,21 @@ class LoginViewController: UIViewController {
         configurePropertyUI()
     }
     
+    // MARK: - Actions
+    
+    @objc func handleShowSignUp() {
+        let registrationVC = RegistrationViewController()
+        navigationController?.pushViewController(registrationVC, animated: true)
+    }
+    
     // MARK: - Helpers
 
     func configurationUI(){
         navigationController?.navigationBar.isHidden = true
         // This will Make barStyle to while color instead of black
         navigationController?.navigationBar.barStyle = .black
-        view.backgroundColor = .green
         
-        let gradient = CAGradientLayer()
-        gradient.colors = [ UIColor.systemPurple.cgColor , UIColor.systemBlue.cgColor]
-       // gradient.locations = [0,1]
-
-        view.layer.addSublayer(gradient)
-        // We must set view frame to gradient frame
-        gradient.frame = view.frame
+        configureGradientLayer()
 
     }
     
