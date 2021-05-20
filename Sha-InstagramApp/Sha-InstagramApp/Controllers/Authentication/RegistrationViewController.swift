@@ -14,12 +14,15 @@ class RegistrationViewController: UIViewController {
     
     var registrationVM = RegistrationViewModel()
     
+    var profileImage: UIImageView = UIImageView()
+    
     let plusPhotoBtn: UIButton = {
         let photoBtn = UIButton(type: .system)
         photoBtn.setImage(UIImage(named: "plus_photo"), for: .normal)
         photoBtn.tintColor = .white
         photoBtn.setHeight(140)
         photoBtn.setWidth(140)
+        photoBtn.addTarget(self, action: #selector(handleShowProfilePhoto), for: .touchUpInside)
         return photoBtn
     }()
     
@@ -54,6 +57,7 @@ class RegistrationViewController: UIViewController {
         signBtn.backgroundColor = .systemPurple.withAlphaComponent(0.2)
         signBtn.layer.cornerRadius = 5
         signBtn.setHeight(50)
+        signBtn.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return signBtn
     }()
     
@@ -68,6 +72,16 @@ class RegistrationViewController: UIViewController {
 
    @objc func handleShowSignIn() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func handleShowSignUp(){
+        registrationVM.email = emailTextF.text
+        registrationVM.password = passwordTextF.text
+        registrationVM.fullname = fullNameTextF.text
+        registrationVM.username = userNameTextF.text
+        registrationVM.profileImage = profileImage.image
+        
+        registrationVM.registerUserDetails()
     }
     
     @objc func textFieldDidChanged(sender: UITextField) {
@@ -144,8 +158,6 @@ class RegistrationViewController: UIViewController {
         passwordTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         fullNameTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         userNameTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
-        
-        plusPhotoBtn.addTarget(self, action: #selector(handleShowProfilePhoto), for: .touchUpInside)
     }
 }
 
@@ -170,6 +182,8 @@ extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigat
         // We must add .withRenderingMode(.alwaysOriginal) then only image will show into screen
         plusPhotoBtn.setImage(selectedImageFromPhone.withRenderingMode(.alwaysOriginal), for: .normal)
         
+        // Set your slected photo to ProfilePhoto
+        profileImage.image = plusPhotoBtn.image(for: .normal)
         plusPhotoBtn.layer.cornerRadius = plusPhotoBtn.frame.width/2
         plusPhotoBtn.layer.masksToBounds = true // Must add this line
         plusPhotoBtn.layer.borderWidth = 2

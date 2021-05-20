@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,8 @@
 		DB926634265562F700E794EE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926633265562F700E794EE /* CustomTextField.swift */; };
 		DB926636265628FB00E794EE /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926635265628FB00E794EE /* AuthenticationViewModel.swift */; };
 		DB9266382656674100E794EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB9266372656674100E794EE /* GoogleService-Info.plist */; };
+		DB92663A2656857000E794EE /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9266392656857000E794EE /* ImageUploader.swift */; };
+		DB92663C2656899800E794EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92663B2656899800E794EE /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		DB926633265562F700E794EE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DB926635265628FB00E794EE /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		DB9266372656674100E794EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB9266392656857000E794EE /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		DB92663B2656899800E794EE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E7F4DDA3A60729C931D5F1DB /* Pods-Sha-InstagramApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sha-InstagramApp.debug.xcconfig"; path = "Target Support Files/Pods-Sha-InstagramApp/Pods-Sha-InstagramApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +160,8 @@
 		DB33EB0E2653A042000CC1EF /* APIs */ = {
 			isa = PBXGroup;
 			children = (
+				DB9266392656857000E794EE /* ImageUploader.swift */,
+				DB92663B2656899800E794EE /* AuthService.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -191,7 +197,6 @@
 				E7F4DDA3A60729C931D5F1DB /* Pods-Sha-InstagramApp.debug.xcconfig */,
 				7F5BDE6C3273AED7CA8B111D /* Pods-Sha-InstagramApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -323,6 +328,8 @@
 				DB33EB192653BD2A000CC1EF /* ImageSelectorViewController.swift in Sources */,
 				DB33EB1D2653BD58000CC1EF /* ProfileViewController.swift in Sources */,
 				DB33EB132653A17C000CC1EF /* MainTabController.swift in Sources */,
+				DB92663A2656857000E794EE /* ImageUploader.swift in Sources */,
+				DB92663C2656899800E794EE /* AuthService.swift in Sources */,
 				DB33EB26265401F4000CC1EF /* Extensions.swift in Sources */,
 				DB33EAF326539EFD000CC1EF /* SceneDelegate.swift in Sources */,
 			);
