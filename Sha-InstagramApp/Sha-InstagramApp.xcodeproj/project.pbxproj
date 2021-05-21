@@ -19,7 +19,7 @@
 		DB33EB172653BD0E000CC1EF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33EB162653BD0E000CC1EF /* SearchViewController.swift */; };
 		DB33EB192653BD2A000CC1EF /* ImageSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33EB182653BD2A000CC1EF /* ImageSelectorViewController.swift */; };
 		DB33EB1B2653BD48000CC1EF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33EB1A2653BD48000CC1EF /* NotificationViewController.swift */; };
-		DB33EB1D2653BD58000CC1EF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33EB1C2653BD58000CC1EF /* ProfileViewController.swift */; };
+		DB33EB1D2653BD58000CC1EF /* ProfileCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33EB1C2653BD58000CC1EF /* ProfileCollectionViewController.swift */; };
 		DB33EB242653FA83000CC1EF /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33EB232653FA83000CC1EF /* FeedCollectionViewCell.swift */; };
 		DB33EB26265401F4000CC1EF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33EB25265401F4000CC1EF /* Extensions.swift */; };
 		DB926630265532B100E794EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92662F265532B100E794EE /* LoginViewController.swift */; };
@@ -29,6 +29,8 @@
 		DB9266382656674100E794EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB9266372656674100E794EE /* GoogleService-Info.plist */; };
 		DB92663A2656857000E794EE /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9266392656857000E794EE /* ImageUploader.swift */; };
 		DB92663C2656899800E794EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92663B2656899800E794EE /* AuthService.swift */; };
+		DB92663F265792AA00E794EE /* ProfileHeaderReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92663E265792AA00E794EE /* ProfileHeaderReusable.swift */; };
+		DB926641265792C700E794EE /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926640265792C700E794EE /* ProfileCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,7 @@
 		DB33EB162653BD0E000CC1EF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DB33EB182653BD2A000CC1EF /* ImageSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorViewController.swift; sourceTree = "<group>"; };
 		DB33EB1A2653BD48000CC1EF /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
-		DB33EB1C2653BD58000CC1EF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DB33EB1C2653BD58000CC1EF /* ProfileCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewController.swift; sourceTree = "<group>"; };
 		DB33EB232653FA83000CC1EF /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		DB33EB25265401F4000CC1EF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DB92662F265532B100E794EE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,8 @@
 		DB9266372656674100E794EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB9266392656857000E794EE /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		DB92663B2656899800E794EE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		DB92663E265792AA00E794EE /* ProfileHeaderReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderReusable.swift; sourceTree = "<group>"; };
+		DB926640265792C700E794EE /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		E7F4DDA3A60729C931D5F1DB /* Pods-Sha-InstagramApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sha-InstagramApp.debug.xcconfig"; path = "Target Support Files/Pods-Sha-InstagramApp/Pods-Sha-InstagramApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,7 +141,7 @@
 				DB33EB162653BD0E000CC1EF /* SearchViewController.swift */,
 				DB33EB182653BD2A000CC1EF /* ImageSelectorViewController.swift */,
 				DB33EB1A2653BD48000CC1EF /* NotificationViewController.swift */,
-				DB33EB1C2653BD58000CC1EF /* ProfileViewController.swift */,
+				DB33EB1C2653BD58000CC1EF /* ProfileCollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				DB33EB232653FA83000CC1EF /* FeedCollectionViewCell.swift */,
+				DB92663D2657926B00E794EE /* Profile */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -189,6 +194,15 @@
 				DB9266312655331C00E794EE /* RegistrationViewController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		DB92663D2657926B00E794EE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DB92663E265792AA00E794EE /* ProfileHeaderReusable.swift */,
+				DB926640265792C700E794EE /* ProfileCell.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		DE88321E809B64B571F34265 /* Pods */ = {
@@ -326,9 +340,11 @@
 				DB33EAF126539EFD000CC1EF /* AppDelegate.swift in Sources */,
 				DB33EB152653BCFD000CC1EF /* FeedCollectionViewController.swift in Sources */,
 				DB33EB192653BD2A000CC1EF /* ImageSelectorViewController.swift in Sources */,
-				DB33EB1D2653BD58000CC1EF /* ProfileViewController.swift in Sources */,
+				DB33EB1D2653BD58000CC1EF /* ProfileCollectionViewController.swift in Sources */,
 				DB33EB132653A17C000CC1EF /* MainTabController.swift in Sources */,
+				DB92663F265792AA00E794EE /* ProfileHeaderReusable.swift in Sources */,
 				DB92663A2656857000E794EE /* ImageUploader.swift in Sources */,
+				DB926641265792C700E794EE /* ProfileCell.swift in Sources */,
 				DB92663C2656899800E794EE /* AuthService.swift in Sources */,
 				DB33EB26265401F4000CC1EF /* Extensions.swift in Sources */,
 				DB33EAF326539EFD000CC1EF /* SceneDelegate.swift in Sources */,

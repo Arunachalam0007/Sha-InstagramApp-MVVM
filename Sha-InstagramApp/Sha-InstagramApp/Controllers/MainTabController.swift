@@ -38,8 +38,9 @@ class MainTabController: UITabBarController {
         let imageSelectorNavController = templateNavigationController(unSelectedImage:  UIImage(named: "plus_unselected"), selectedImage: UIImage(named: "plus_unselected"), viewController: ImageSelectorViewController())
         
         let notificationNavController = templateNavigationController(unSelectedImage:  UIImage(named: "like_unselected"), selectedImage: UIImage(named: "like_selected"), viewController: NotificationViewController())
-        
-        let profileNavController = templateNavigationController(unSelectedImage:  UIImage(named: "profile_unselected"), selectedImage: UIImage(named: "profile_selected"), viewController: ProfileViewController())
+        let profileCollFlowLayout = UICollectionViewFlowLayout()
+        let profileVC = ProfileCollectionViewController(collectionViewLayout: profileCollFlowLayout)
+        let profileNavController = templateNavigationController(unSelectedImage:  UIImage(named: "profile_unselected"), selectedImage: UIImage(named: "profile_selected"), viewController: profileVC)
         
         // array of view controller is displayed by the TabBar interface.
         // FeedVc is the first Array of VC so it's Home VC for TabBar
