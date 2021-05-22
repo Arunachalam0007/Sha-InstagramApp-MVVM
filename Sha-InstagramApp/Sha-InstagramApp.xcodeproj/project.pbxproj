@@ -31,6 +31,9 @@
 		DB92663C2656899800E794EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92663B2656899800E794EE /* AuthService.swift */; };
 		DB92663F265792AA00E794EE /* ProfileHeaderReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92663E265792AA00E794EE /* ProfileHeaderReusable.swift */; };
 		DB926641265792C700E794EE /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926640265792C700E794EE /* ProfileCell.swift */; };
+		DB9266472658D45200E794EE /* UserProfileInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9266462658D45200E794EE /* UserProfileInfoService.swift */; };
+		DB9266492659153800E794EE /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9266482659153800E794EE /* ProfileViewModel.swift */; };
+		DB92664B2659154500E794EE /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92664A2659154500E794EE /* ProfileModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		DB92663B2656899800E794EE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DB92663E265792AA00E794EE /* ProfileHeaderReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderReusable.swift; sourceTree = "<group>"; };
 		DB926640265792C700E794EE /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		DB9266462658D45200E794EE /* UserProfileInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInfoService.swift; sourceTree = "<group>"; };
+		DB9266482659153800E794EE /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		DB92664A2659154500E794EE /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		E7F4DDA3A60729C931D5F1DB /* Pods-Sha-InstagramApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sha-InstagramApp.debug.xcconfig"; path = "Target Support Files/Pods-Sha-InstagramApp/Pods-Sha-InstagramApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				DB926635265628FB00E794EE /* AuthenticationViewModel.swift */,
+				DB9266482659153800E794EE /* ProfileViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -157,6 +164,7 @@
 		DB33EB0D2653A03F000CC1EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DB92664A2659154500E794EE /* ProfileModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +174,7 @@
 			children = (
 				DB9266392656857000E794EE /* ImageUploader.swift */,
 				DB92663B2656899800E794EE /* AuthService.swift */,
+				DB9266462658D45200E794EE /* UserProfileInfoService.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -332,15 +341,18 @@
 				DB926634265562F700E794EE /* CustomTextField.swift in Sources */,
 				DB926630265532B100E794EE /* LoginViewController.swift in Sources */,
 				DB33EB172653BD0E000CC1EF /* SearchViewController.swift in Sources */,
+				DB92664B2659154500E794EE /* ProfileModel.swift in Sources */,
 				DB33EAF526539EFD000CC1EF /* ViewController.swift in Sources */,
 				DB33EB242653FA83000CC1EF /* FeedCollectionViewCell.swift in Sources */,
 				DB9266322655331C00E794EE /* RegistrationViewController.swift in Sources */,
+				DB9266492659153800E794EE /* ProfileViewModel.swift in Sources */,
 				DB926636265628FB00E794EE /* AuthenticationViewModel.swift in Sources */,
 				DB33EB1B2653BD48000CC1EF /* NotificationViewController.swift in Sources */,
 				DB33EAF126539EFD000CC1EF /* AppDelegate.swift in Sources */,
 				DB33EB152653BCFD000CC1EF /* FeedCollectionViewController.swift in Sources */,
 				DB33EB192653BD2A000CC1EF /* ImageSelectorViewController.swift in Sources */,
 				DB33EB1D2653BD58000CC1EF /* ProfileCollectionViewController.swift in Sources */,
+				DB9266472658D45200E794EE /* UserProfileInfoService.swift in Sources */,
 				DB33EB132653A17C000CC1EF /* MainTabController.swift in Sources */,
 				DB92663F265792AA00E794EE /* ProfileHeaderReusable.swift in Sources */,
 				DB92663A2656857000E794EE /* ImageUploader.swift in Sources */,

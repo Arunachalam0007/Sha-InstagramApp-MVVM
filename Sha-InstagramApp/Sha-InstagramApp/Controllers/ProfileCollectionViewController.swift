@@ -13,12 +13,21 @@ private let cellIdentifier = "ProfileCell"
 
 class ProfileCollectionViewController: UICollectionViewController {
     
+    // MARK: - Properties
+    let userProfileVM = ProfileViewModel()
+    
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
         configureCollectionView()
+    }
+    
+    // using viewWillAppear because login page is avaible in top of the screen so viewDidload will work first time
+    override func viewWillAppear(_ animated: Bool) {
+        self.userProfileVM.loadProfile()
+        self.userProfileVM.profileInfoDelegate = self
     }
     
    func configureCollectionView(){
@@ -39,6 +48,10 @@ extension ProfileCollectionViewController {
     // Header Cell
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! ProfileHeaderReusable
+        cell.profileNameLable.text = userProfileVM.profileInfo?.username
+        if let profileImage = userProfileVM.profileImageData {
+            cell.profileImageView.image = UIImage(data: profileImage)
+        }
         return cell
     }
     
@@ -82,4 +95,11 @@ extension ProfileCollectionViewController: UICollectionViewDelegateFlowLayout {
     
 }
 
+// MARK: - ProfileInfoDelegate
 
+extension ProfileCollectionViewController: ProfileInfoDelegate {
+    func profileData() {
+        self.collectionView.reloadData()
+    }
+    
+}

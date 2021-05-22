@@ -71,8 +71,8 @@ struct AuthService {
                                               "profileImageURL":imageURL,
                                               "userID":userId]
                 
-                // Store UserDat in Firebase database
-                Firestore.firestore().collection("users").addDocument(data: userData) { error in
+                // Store UserData in Firebase database with documentId as userId
+                Firestore.firestore().collection("users").document(userId).setData(userData, merge: false) { error in
                     if let error = error {
                         print("DEBUG: Unable to Add User Data in Users Database: \(error.localizedDescription)")
                         completion(nil)
