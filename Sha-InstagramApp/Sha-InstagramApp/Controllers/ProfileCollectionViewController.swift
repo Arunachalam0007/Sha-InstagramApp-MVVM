@@ -99,6 +99,7 @@ extension ProfileCollectionViewController: UICollectionViewDelegateFlowLayout {
 
 extension ProfileCollectionViewController: ProfileInfoDelegate {
     func profileData() {
+        navigationItem.title = userProfileVM.profileInfo?.username
         self.collectionView.reloadData()
     }
     

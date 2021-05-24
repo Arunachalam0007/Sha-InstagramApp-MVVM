@@ -34,6 +34,8 @@
 		DB9266472658D45200E794EE /* UserProfileInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9266462658D45200E794EE /* UserProfileInfoService.swift */; };
 		DB9266492659153800E794EE /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9266482659153800E794EE /* ProfileViewModel.swift */; };
 		DB92664B2659154500E794EE /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92664A2659154500E794EE /* ProfileModel.swift */; };
+		DB92664D265BA7D100E794EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92664C265BA7D100E794EE /* Constants.swift */; };
+		DB92664F265BA85000E794EE /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92664E265BA85000E794EE /* UserProfileCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		DB9266462658D45200E794EE /* UserProfileInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInfoService.swift; sourceTree = "<group>"; };
 		DB9266482659153800E794EE /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		DB92664A2659154500E794EE /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		DB92664C265BA7D100E794EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DB92664E265BA85000E794EE /* UserProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCell.swift; sourceTree = "<group>"; };
 		E7F4DDA3A60729C931D5F1DB /* Pods-Sha-InstagramApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sha-InstagramApp.debug.xcconfig"; path = "Target Support Files/Pods-Sha-InstagramApp/Pods-Sha-InstagramApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				DB33EB25265401F4000CC1EF /* Extensions.swift */,
+				DB92664C265BA7D100E794EE /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				DB33EB232653FA83000CC1EF /* FeedCollectionViewCell.swift */,
+				DB92664E265BA85000E794EE /* UserProfileCell.swift */,
 				DB92663D2657926B00E794EE /* Profile */,
 			);
 			path = Cells;
@@ -344,6 +350,7 @@
 				DB92664B2659154500E794EE /* ProfileModel.swift in Sources */,
 				DB33EAF526539EFD000CC1EF /* ViewController.swift in Sources */,
 				DB33EB242653FA83000CC1EF /* FeedCollectionViewCell.swift in Sources */,
+				DB92664D265BA7D100E794EE /* Constants.swift in Sources */,
 				DB9266322655331C00E794EE /* RegistrationViewController.swift in Sources */,
 				DB9266492659153800E794EE /* ProfileViewModel.swift in Sources */,
 				DB926636265628FB00E794EE /* AuthenticationViewModel.swift in Sources */,
@@ -353,6 +360,7 @@
 				DB33EB192653BD2A000CC1EF /* ImageSelectorViewController.swift in Sources */,
 				DB33EB1D2653BD58000CC1EF /* ProfileCollectionViewController.swift in Sources */,
 				DB9266472658D45200E794EE /* UserProfileInfoService.swift in Sources */,
+				DB92664F265BA85000E794EE /* UserProfileCell.swift in Sources */,
 				DB33EB132653A17C000CC1EF /* MainTabController.swift in Sources */,
 				DB92663F265792AA00E794EE /* ProfileHeaderReusable.swift in Sources */,
 				DB92663A2656857000E794EE /* ImageUploader.swift in Sources */,
