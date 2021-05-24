@@ -16,6 +16,14 @@ class ProfileListViewModel {
     var listOfProfileVm = [ProfileViewModel]()
     var profileListDelegate: ProfileListDelegate?
     
+    var profileVMCount: Int {
+        return listOfProfileVm.count
+    }
+    
+    func profileViewModelAtIndex(index: Int) -> ProfileViewModel {
+        return listOfProfileVm[index]
+    }
+    
     func loadAllUserProfile() {
         UserProfileInfoService.fetchAllUserProfileInfo { allUsersData in
             guard let allUsersData = allUsersData else {
