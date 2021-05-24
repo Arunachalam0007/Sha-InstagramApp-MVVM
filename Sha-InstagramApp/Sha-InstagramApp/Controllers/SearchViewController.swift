@@ -12,12 +12,16 @@ class SearchViewController: UITableViewController {
     
     // MARK: - Properties
     
+    var profileListVM =  ProfileListViewModel()
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
+        view.backgroundColor = .white
         tableViewConfiguration()
+        profileListVM.profileListDelegate = self
+        profileListVM.loadAllUserProfile()
     }
     
     // MARK: - Helpers
@@ -30,13 +34,24 @@ class SearchViewController: UITableViewController {
     
 }
 
+// MARK: - TableView Datasource
+
 extension SearchViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        profileListVM.listOfProfileVm.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.userProfileCellIdentifier, for: indexPath) as! UserProfileCell
+        cell.profileVM =  profileListVM.listOfProfileVm[indexPath.row]
         return cell
+    }
+}
+
+// MARK: - ProfileListDelegate
+
+extension SearchViewController: ProfileListDelegate {
+    func profileListData() {
+        tableView.reloadData()
     }
 }

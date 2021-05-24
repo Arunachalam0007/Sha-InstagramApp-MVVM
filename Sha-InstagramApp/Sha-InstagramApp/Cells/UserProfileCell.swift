@@ -7,9 +7,18 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class UserProfileCell: UITableViewCell {
     // MARK: - Propertes
+    
+    var profileVM: ProfileViewModel? {
+        didSet{
+            userNameLabel.text = profileVM?.userName
+            fullNameLabel.text = profileVM?.fullName
+            profileImageView.sd_setImage(with: profileVM?.profileImageURL)
+        }
+    }
     
     private let profileImageView: UIImageView = {
        let profileIV = UIImageView()

@@ -30,6 +30,32 @@ class ProfileViewModel {
         }
     }
     
+    var profileImageURL: URL? {
+        get{
+            guard let profileImageURLString = profileInfo?.profileImageURL, let profileImageURL = URL(string: profileImageURLString) else { return nil }
+            
+           return profileImageURL
+        }
+    }
+    
+    var userName: String? {
+        get{
+            return profileInfo?.username ?? nil
+        }
+    }
+    
+    var fullName: String? {
+        get{
+            return profileInfo?.fullname ?? nil
+        }
+    }
+    
+    var email: String? {
+        get{
+            return profileInfo?.email ?? nil
+        }
+    }
+    
     func loadProfile() {
         UserProfileInfoService().fetchUserProfileInfo(userId: profileId) { profileData in
             

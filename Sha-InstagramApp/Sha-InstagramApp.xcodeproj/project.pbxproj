@@ -36,6 +36,7 @@
 		DB92664B2659154500E794EE /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92664A2659154500E794EE /* ProfileModel.swift */; };
 		DB92664D265BA7D100E794EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92664C265BA7D100E794EE /* Constants.swift */; };
 		DB92664F265BA85000E794EE /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92664E265BA85000E794EE /* UserProfileCell.swift */; };
+		DB926653265BF12700E794EE /* ProfileListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926652265BF12700E794EE /* ProfileListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		DB92664A2659154500E794EE /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		DB92664C265BA7D100E794EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DB92664E265BA85000E794EE /* UserProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCell.swift; sourceTree = "<group>"; };
+		DB926652265BF12700E794EE /* ProfileListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListViewModel.swift; sourceTree = "<group>"; };
 		E7F4DDA3A60729C931D5F1DB /* Pods-Sha-InstagramApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sha-InstagramApp.debug.xcconfig"; path = "Target Support Files/Pods-Sha-InstagramApp/Pods-Sha-InstagramApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +163,7 @@
 			children = (
 				DB926635265628FB00E794EE /* AuthenticationViewModel.swift */,
 				DB9266482659153800E794EE /* ProfileViewModel.swift */,
+				DB926652265BF12700E794EE /* ProfileListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				DB926636265628FB00E794EE /* AuthenticationViewModel.swift in Sources */,
 				DB33EB1B2653BD48000CC1EF /* NotificationViewController.swift in Sources */,
 				DB33EAF126539EFD000CC1EF /* AppDelegate.swift in Sources */,
+				DB926653265BF12700E794EE /* ProfileListViewModel.swift in Sources */,
 				DB33EB152653BCFD000CC1EF /* FeedCollectionViewController.swift in Sources */,
 				DB33EB192653BD2A000CC1EF /* ImageSelectorViewController.swift in Sources */,
 				DB33EB1D2653BD58000CC1EF /* ProfileCollectionViewController.swift in Sources */,

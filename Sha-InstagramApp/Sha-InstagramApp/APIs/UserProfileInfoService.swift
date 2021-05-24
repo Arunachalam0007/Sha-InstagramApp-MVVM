@@ -20,4 +20,21 @@ class UserProfileInfoService{
             completion(profileInfo)
         }
     }
+
+    static func fetchAllUserProfileInfo(completion: @escaping ([[String:Any]]?)->Void){
+        
+        Firestore.firestore().collection("users").getDocuments { querySnapshot, error in
+    
+            guard let querySnapshot = querySnapshot else {
+                return completion(nil)
+            }
+            var userListProfileData = [[String:Any]] ()
+            querySnapshot.documents.forEach { queryDocumentSnapshot in
+               let singleUserProfileData  =  queryDocumentSnapshot.data()
+                userListProfileData.append(singleUserProfileData)
+            }
+            completion(userListProfileData)
+        }
+    }
+    
 }
