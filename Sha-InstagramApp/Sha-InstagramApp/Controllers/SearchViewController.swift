@@ -75,6 +75,23 @@ extension SearchViewController {
     }
 }
 
+// MARK: - TableView Delegate
+
+extension SearchViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedProfileVM:ProfileViewModel
+        if inSearchMode {
+        selectedProfileVM = fillterProfileListVM.profileViewModelAtIndex(index: indexPath.item)
+        } else {
+        selectedProfileVM = profileListVM.profileViewModelAtIndex(index: indexPath.item)
+        }
+        let profileVC = ProfileCollectionViewController(userProfileVM: selectedProfileVM)
+        profileVC.userProfileVM = selectedProfileVM
+        navigationController?.pushViewController(profileVC, animated: true)
+    }
+}
+
+
 // MARK: - ProfileListDelegate
 
 extension SearchViewController: ProfileListDelegate {

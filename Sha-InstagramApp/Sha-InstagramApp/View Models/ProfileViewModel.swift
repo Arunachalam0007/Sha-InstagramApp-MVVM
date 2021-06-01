@@ -16,7 +16,7 @@ class ProfileViewModel {
     
     var profileId: String {
         get {
-            return Auth.auth().currentUser?.uid ?? ""
+            return Auth.auth().currentUser?.uid ?? "cEsPy1LnmdgU675QEBYDfHWzl3t2"
         }
     }
     var profileInfoDelegate: ProfileInfoDelegate?

@@ -14,10 +14,19 @@ private let cellIdentifier = "ProfileCell"
 class ProfileCollectionViewController: UICollectionViewController {
     
     // MARK: - Properties
-    let userProfileVM = ProfileViewModel()
+    var userProfileVM = ProfileViewModel()
     
     // MARK: - LifeCycle
-
+    
+    init(userProfileVM: ProfileViewModel) {
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+        self.userProfileVM = userProfileVM
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
@@ -25,14 +34,14 @@ class ProfileCollectionViewController: UICollectionViewController {
     }
     
     // using viewWillAppear because login page is avaible in top of the screen so viewDidload will work first time
-    override func viewWillAppear(_ animated: Bool) {
-        self.userProfileVM.loadProfile()
-        self.userProfileVM.profileInfoDelegate = self
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.userProfileVM.loadProfile()
+//        self.userProfileVM.profileInfoDelegate = self
+//    }
     
    func configureCollectionView(){
         collectionView.backgroundColor = .white
-    
+        navigationItem.title = userProfileVM.profileInfo?.username
         // Register Header
         collectionView.register(ProfileHeaderReusable.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         // Register Cell
@@ -95,12 +104,12 @@ extension ProfileCollectionViewController: UICollectionViewDelegateFlowLayout {
     
 }
 
-// MARK: - ProfileInfoDelegate
-
-extension ProfileCollectionViewController: ProfileInfoDelegate {
-    func profileData() {
-        navigationItem.title = userProfileVM.profileInfo?.username
-        self.collectionView.reloadData()
-    }
-    
-}
+//// MARK: - ProfileInfoDelegate
+//
+//extension ProfileCollectionViewController: ProfileInfoDelegate {
+//    func profileData() {
+//        navigationItem.title = userProfileVM.profileInfo?.username
+//        self.collectionView.reloadData()
+//    }
+//
+//}

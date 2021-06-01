@@ -10,11 +10,15 @@ import UIKit
 
 class MainTabController: UITabBarController {
     
+    // MARK: - Properties
+    var userProfileVM = ProfileViewModel()
+    
     // MARK: - Lifecycle
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureProfileViewData()
         configureTabControllers()
         
     }
@@ -38,8 +42,8 @@ class MainTabController: UITabBarController {
         let imageSelectorNavController = templateNavigationController(unSelectedImage:  UIImage(named: "plus_unselected"), selectedImage: UIImage(named: "plus_unselected"), viewController: ImageSelectorViewController())
         
         let notificationNavController = templateNavigationController(unSelectedImage:  UIImage(named: "like_unselected"), selectedImage: UIImage(named: "like_selected"), viewController: NotificationViewController())
-        let profileCollFlowLayout = UICollectionViewFlowLayout()
-        let profileVC = ProfileCollectionViewController(collectionViewLayout: profileCollFlowLayout)
+        
+        let profileVC = ProfileCollectionViewController(userProfileVM: userProfileVM)
         let profileNavController = templateNavigationController(unSelectedImage:  UIImage(named: "profile_unselected"), selectedImage: UIImage(named: "profile_selected"), viewController: profileVC)
         
         // array of view controller is displayed by the TabBar interface.
@@ -64,4 +68,17 @@ class MainTabController: UITabBarController {
         return navController
     }
     
+    func configureProfileViewData() {
+        userProfileVM.profileInfoDelegate = self
+        userProfileVM.loadProfile()
+    }
+    
+}
+
+// MARK: - ProfileInfoDelegate
+
+extension MainTabController: ProfileInfoDelegate {
+    func profileData() {
+        configureTabControllers()
+    }
 }
